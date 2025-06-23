@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Main",
+        "position": "mainMenu",
+        "items": [
+            {
+                "id": 1724171146457,
+                "label": "Home",
+                "title": "",
+                "type": "frontpage",
+                "target": "_self",
+                "rel": "",
+                "link": "empty",
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            },
+            {
+                "id": 1724172721293,
+                "label": "Tags",
+                "title": "",
+                "type": "tags",
+                "target": "_self",
+                "rel": "",
+                "link": "empty",
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            },
+            {
+                "id": 1724954366011,
+                "label": "Terms of Use",
+                "title": "",
+                "type": "page",
+                "target": "_self",
+                "rel": "",
+                "link": 8,
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            },
+            {
+                "id": 1724172940284,
+                "label": "Contact Us",
+                "title": "",
+                "type": "external",
+                "target": "_self",
+                "rel": "",
+                "link": "mailto:bobbobbee@spaceb-technologies.com",
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            }
+        ],
+        "maxLevels": "-1"
+    }
+]

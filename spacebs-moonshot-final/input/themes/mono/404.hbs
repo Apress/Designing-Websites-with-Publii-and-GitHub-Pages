@@ -1,0 +1,18 @@
+{{> head}}
+{{> navbar}}
+   <main class="main page page--error">
+      <div class="hero">
+         <div class="main__inner">
+             {{{@config.custom.textHero}}}
+         </div>
+      </div>
+
+      <div class="main__inner">
+        {{{@config.custom.errorPage}}}
+         <p>
+           <a href="{{@website.url}}" class="btn">{{ translate 'error.goHome' }}</a>
+         </p>
+      </div>
+   </main>
+{{> sidebar}}
+{{> footer}}

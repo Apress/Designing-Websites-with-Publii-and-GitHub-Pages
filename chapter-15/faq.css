@@ -1,0 +1,37 @@
+/*
+ * FAQ
+ */
+
+.faq-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+details {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+summary {
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+details > p {
+    margin: 0;
+    padding: 10px !important;
+    background-color: #fff;
+    line-height: normal;
+}
+
+details[open] summary {
+    background-color: #e7e7e7;
+}

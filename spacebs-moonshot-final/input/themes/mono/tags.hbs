@@ -1,0 +1,39 @@
+{{> head}}
+{{> navbar}}
+   <main class="main page page--tags">
+      <div class="hero">
+         <div class="main__inner">
+            <h1>{{ translate 'tags.tagsPageTitle' }}</h1>
+               <p>{{ translate "tags.description" tagsNumber }}</p>
+         </div>
+      </div>
+
+      <div class="main__inner">
+         <ul class="tags-list">
+            {{#each tags}}
+               <li class="tags-list__item">
+                  <a href="{{url}}">
+                     {{#featuredImage}}
+                        {{#if url}}
+                           <figure class="tags-list__image">
+                              <img
+                                 src="{{url}}"
+                                 {{#if @config.site.responsiveImages}}
+                                 {{responsiveImageAttributes 'tagImage' srcset sizes}}
+                                 {{/if}}
+                                 {{ lazyload "lazy" }}
+                                 height="{{height}}"
+                                 width="{{width}}"
+                                 alt="{{alt}}">
+                           </figure>
+                        {{/if}}
+                     {{/featuredImage}}
+                     <span class="tags-list__title">{{name}} {{#if tagViewConfig.displayPostCounter}}<sup>({{postsNumber}})</sup>{{/if}}</span>
+                  </a>
+               </li>
+            {{/each}}
+         </ul>
+      </div>
+   </main>
+{{> sidebar}}
+{{> footer}}

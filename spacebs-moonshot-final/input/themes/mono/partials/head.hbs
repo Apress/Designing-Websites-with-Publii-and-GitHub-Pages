@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ @website.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{#if title}}
+            <title>{{title}}</title>
+        {{else}}
+            <title>{{@website.name}}</title>
+        {{/if}}
+        {{metaDescription}}
+        {{metaRobots}}
+        {{{publiiHead}}}
+        {{canonicalLink}}
+        {{feedLink}}
+        {{socialMetaTags}}
+		{{#if @config.custom.faviconUpload}}
+	        <link rel="shortcut icon" href="{{@config.custom.faviconUpload}}" type="{{@config.custom.faviconExtension}}" />
+        {{/if}}
+        {{#if @pagination}}
+            {{#if @pagination.previousPage}}
+                <link rel="prev" href="{{@pagination.previousPageUrl }}">
+            {{/if}}
+            {{#if @pagination.nextPage}}
+                <link rel="next" href="{{@pagination.nextPageUrl }}">
+            {{/if}}
+        {{/if}}
+        {{> fonts}}         
+        <link rel="stylesheet" href="{{css "style.css" }}">
+        {{#checkIfAny post.hasGallery page.hasGallery}}
+            <link rel="stylesheet" href="{{css "photoswipe.css" }}">
+        {{/checkIfAny}}
+        {{#checkIf @config.custom.frontSource '==' "post" }}
+           {{#checkIf @config.custom.frontGallery '==' true}}
+              {{#is "index"}}
+                 <link rel="stylesheet" href="{{css "photoswipe.css" }}">
+              {{/is}}
+           {{/checkIf}}
+        {{/checkIf}}	
+        {{jsonLD}}      
+        <noscript>
+            <style>
+                img[loading] {
+                    opacity: 1;
+                }
+            </style>
+        </noscript>	    
+        {{{@headCustomCode}}}
+    </head>
+    <body class="{{#is "index"}}home-template{{/is}}{{#is "index-pagination"}} pagination-template{{/is}}{{#is "tag"}}tag-template{{/is}}{{#is "tag-pagination"}} pagination-template{{/is}}{{#is "tags"}}tags-template{{/is}}{{#is "page"}}page-template{{/is}}{{#is "post"}}post-template{{/is}}{{#is "author"}}author-template{{/is}}{{#is "author-pagination"}} pagination-template{{/is}}{{#is "404"}}error-template{{/is}}{{#is "search"}}search-template{{/is}}">
+        {{{@bodyCustomCode}}}
+        <div class="container{{#checkIfNone @config.custom.featured @config.custom.authors @config.custom.tags @config.custom.newsletter @config.custom.socialButtons @config.custom.copyright}} container--nosidebar{{/checkIfNone}}">

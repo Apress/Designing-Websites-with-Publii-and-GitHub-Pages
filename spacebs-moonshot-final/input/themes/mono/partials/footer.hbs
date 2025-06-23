@@ -1,0 +1,38 @@
+</div>
+
+<script defer src="{{js "scripts.min.js"}}"></script>
+
+{{#if @config.site.mediaLazyLoad}}
+    <script>        
+        var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }
+    </script>
+{{/if}}
+
+{{#checkIfAny post.hasGallery page.hasGallery}}
+   {{> photoswipe}}
+{{/checkIfAny}}
+
+{{#checkIf @config.custom.frontSource '==' "post"}}
+   {{#checkIf @config.custom.frontGallery '==' true}}
+      {{#is "index"}}
+          {{> photoswipe}}
+      {{/is}}
+   {{/checkIf}}
+{{/checkIf}}
+{{#if @renderer.previewMode}}
+   <script defer src="{{js "svg-map.js"}}"></script>
+   <script defer src="{{js "svg-fix.js"}}"></script>
+{{/if}}
+{{{@footerCustomCode}}}
+{{{ publiiFooter }}}
+</body>
+</html>

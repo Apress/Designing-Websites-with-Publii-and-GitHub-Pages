@@ -1,0 +1,22 @@
+.hero {
+margin-top:-38px;
+}
+
+.hero__content {
+    padding-bottom: calc(var(--baseline) * 1 + 1.5vw);
+}
+
+blockquote, figure, hr, pre, table {
+    margin-top: calc(var(--baseline) * 2 + .5vw);
+    margin-bottom: calc(var(--baseline) * 2 + .5vw);
+}
+
+dl, ol, p, ul {
+    margin-top: calc(var(--baseline) * 1.25 + .25vw);
+}
+.btn {
+	margin-top: calc(var(--baseline) * 2.5 + .25vw);
+}
+blockquote {
+    font-variation-settings: unset;
+}

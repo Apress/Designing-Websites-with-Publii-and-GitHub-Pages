@@ -1,0 +1,20 @@
+/*
+ * Button styling for buttons with title "make_btn"
+ */
+
+a[title="Book Now"] {
+  	cursor: pointer;
+    background-color: RoyalBlue;
+    color: white !important;
+    padding: 10px 25px;
+    font-size: 2.25rem;
+    text-decoration: none !important;
+    border-radius: 50px;
+    transition: background-color 0.3s 
+    transition: padding 0.3s
+}
+
+a[title="Book Now"]:hover {
+	padding: 10px 50px;
+	background-color: DarkBlue;
+}
